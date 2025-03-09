@@ -128,6 +128,14 @@
                 "HLC_NONE": "1",
                 "TARGET": "splitkb_halcyon_elora_rev2_default_hlc"
             }
+        ],
+        [
+            "splitkb/halcyon/elora/rev2",
+            "bdunn_hlc",
+            {
+                "HLC_NONE": "1",
+                "TARGET": "bdunn_halcyon_elora_rev2_default_hlc"
+            }
         ]
     ]
 }
