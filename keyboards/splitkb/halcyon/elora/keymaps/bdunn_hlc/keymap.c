@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 
 void keyboard_post_init_user(void) {
-    eeconfig_init();                        // Reset EEPROM to default
+//    eeconfig_init();                        // Reset EEPROM to default
     rgb_matrix_enable();                    // Re-enable RGB Matrix after EEPROM reset
     rgb_matrix_mode(RGB_MATRIX_SOLID_COLOR); // Set RGB mode to solid color
     rgb_matrix_sethsv_noeeprom(HSV_RED);    // Set the RGB color to red
