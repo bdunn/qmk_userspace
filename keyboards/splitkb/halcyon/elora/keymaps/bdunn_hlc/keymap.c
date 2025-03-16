@@ -23,53 +23,98 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------'                                              `-----------------------------------'
  */
    [0] = LAYOUT_elora_hlc(
-       KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,                                    KC_7,    KC_8,    KC_9,    KC_0,    KC_NO,   KC_BSLS,
-       KC_TAB,  KC_W,    KC_G,    KC_M,    KC_J,    KC_NO,                                   KC_DOT,  KC_GT,   KC_PIPE, KC_PLUS, KC_NO,   KC_B,
-       LGUI_T(KC_S), LALT_T(KC_N), LCTL_T(KC_T), LSFT_T(KC_H), KC_NO, KC_NO,                RSFT_T(KC_A), RCTL_T(KC_E), RALT_T(KC_O), RGUI_T(KC_U), KC_NO, KC_NO,
-       KC_NO,   KC_D,    KC_L,    KC_X,    KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,      KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-                                   MO(1),   KC_ESC,  KC_ENT, KC_SPC, KC_NO, KC_NO,          KC_TAB, KC_SPC, KC_BSPC, KC_NO,
+       KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,                                   KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV,   KC_BSPC,
+
+       KC_TAB,   KC_V,   KC_W,   KC_G,   KC_M,    KC_J,                                     KC_SCLN,   KC_DOT,   KC_QUOT,   KC_EQL,   KC_SLSH, KC_BSLS,
+
+       KC_NO,  LGUI_T(KC_S), LALT_T(KC_N), LCTL_T(KC_T), LSFT_T(KC_H), KC_K,                KC_COMMA, RSFT_T(KC_A), RCTL_T(KC_E), RALT_T(KC_I), RGUI_T(KC_C), KC_NO,
+
+       KC_NO,  KC_F,  KC_P,    KC_D,    KC_L,   KC_X,  KC_ESC, KC_NO,                       KC_NO, KC_NO, KC_MINS,   KC_U,   KC_O,   KC_Y,   KC_B,   KC_NO,
+
+                               KC_LALT, MO(1),  KC_ENT,  KC_R, KC_SPC,                     KC_TAB,  KC_BSPC, KC_SPC, MO(1), KC_DEL,
+
        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                           KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
    ),
 
-/*
- * Base Layer: Dvorak
- *
- * ,-------------------------------------------.                              ,-------------------------------------------.
- * |  Esc   |   1  |   2  |   3  |   4  |   5  |                              |   6  |   7  |   8  |   9  |   0  |  Esc   |
- * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |  Tab   | ' "  | , <  | . >  |   P  |   Y  |                              |   F  |   G  |   C  |   R  |   L  |  Bksp  |
- * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |Ctrl/Esc|   A  |   O  |   E  |   U  |   I  |                              |   D  |   H  |   T  |   N  |   S  |Ctrl/- _|
- * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * | LShift | ; :  |   Q  |   J  |   K  |   X  | [ {  |CapsLk|  |F-keys|  ] } |   B  |   M  |   W  |   V  |   Z  | RShift |
- * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        |Adjust| LGUI | LAlt/| Space| Nav  |  | Sym  | Space| AltGr| RGUI | Menu |
- *                        |      |      | Enter|      |      |  |      |      |      |      |      |
- *                        `----------------------------------'  `----------------------------------'
- * ,-----------------------------------.                                              ,-----------------------------------.
- * | MUTE | ____ | _____ | ____ | ____ |                                              | MUTE | ____ | _____ | ____ | ____ |
- * `-----------------------------------'                                              `-----------------------------------'
- */
 
-/*
- * Base Layer: Colemak DH
- *
- * ,-------------------------------------------.                              ,-------------------------------------------.
- * |  Esc   |   1  |   2  |   3  |   4  |   5  |                              |   6  |   7  |   8  |   9  |   0  |  Esc   |
- * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |  Tab   |   Q  |   W  |   F  |   P  |   B  |                              |   J  |   L  |   U  |   Y  | ;  : |  Bksp  |
- * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |Ctrl/Esc|   A  |   R  |   S  |   T  |   G  |                              |   M  |   N  |   E  |   I  |   O  |Ctrl/' "|
- * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   D  |   V  | [ {  |CapsLk|  |F-keys|  ] } |   K  |   H  | ,  < | . >  | /  ? | RShift |
- * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        |Adjust| LGUI | LAlt/| Space| Nav  |  | Sym  | Space| AltGr| RGUI | Menu |
- *                        |      |      | Enter|      |      |  |      |      |      |      |      |
- *                        `----------------------------------'  `----------------------------------'
- * ,-----------------------------------.                                              ,-----------------------------------.
- * | MUTE | ____ | _____ | ____ | ____ |                                              | MUTE | ____ | _____ | ____ | ____ |
- * `-----------------------------------'                                              `-----------------------------------'
- */
+   [1] = LAYOUT_elora_hlc(
+       KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,                                   KC_F7,    KC_F8,    KC_F9,    KC_F10,    KC_F11,   KC_F12,
+
+              KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,                                KC_LCBR,   KC_RCBR,   KC_MINS,   KC_EQL,   KC_HOME, KC_PGUP,
+
+              KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                          KC_LEFT, KC_UP, KC_DOWN,  KC_RIGHT,  KC_END, KC_PGDN,
+
+              KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,   KC_NO,  KC_ESC, DF(5),                 KC_NO, KC_NO, KC_LBRC,   KC_RBRC,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+
+                                      KC_TRNS, KC_TRNS,  KC_TRNS,  KC_NO, KC_TRNS,                KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+
+              KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
+   ),
+
+    [2] = LAYOUT_elora_hlc(
+          KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                                   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,   KC_NO,
+
+                 KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,                                KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO,
+
+                 KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                          KC_NO, KC_NO, KC_NO,  KC_NO,  KC_NO, KC_NO,
+
+                 KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,   KC_NO,  KC_NO, KC_NO,                  KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+
+                                         KC_NO, KC_NO,  KC_NO,  KC_NO, KC_NO,                        KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO,
+
+                 KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
+    ),
+
+    [3] = LAYOUT_elora_hlc(
+              KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                                   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,   KC_NO,
+
+                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,                                KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO,
+
+                     KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                          KC_NO, KC_NO, KC_NO,  KC_NO,  KC_NO, KC_NO,
+
+                     KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,   KC_NO,  KC_NO, KC_NO,                  KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+
+                                             KC_NO, KC_NO,  KC_NO,  KC_NO, KC_NO,                        KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO,
+
+                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
+       ),
+
+    [4] = LAYOUT_elora_hlc(
+              KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                                   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,   KC_NO,
+
+                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,                                KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO,
+
+                     KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                          KC_NO, KC_NO, KC_NO,  KC_NO,  KC_NO, KC_NO,
+
+                     KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,   KC_NO,  KC_NO, KC_NO,                  KC_NO, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+
+                                             KC_NO, KC_NO,  KC_NO,  KC_NO, KC_NO,                        KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO,
+
+                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
+       ),
+
+    [5] = LAYOUT_elora_hlc(
+                KC_1 ,  KC_2   ,  KC_3  ,   KC_4 ,   KC_5 ,    KC_6 ,                                        KC_7,   KC_8 ,   KC_9 ,  KC_0 , KC_GRV, KC_BSPC,
+                KC_TAB  , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P , KC_BSLS,
+                KC_LCTL , KC_A ,  KC_S   ,  KC_D  ,   KC_F ,   KC_G ,                                        KC_H,   KC_J ,  KC_K ,   KC_L ,KC_SCLN, KC_QUOT,
+                KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , KC_ESC, KC_NO,        KC_NO  , KC_NO,  KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
+                                           MO(6) , KC_LALT, KC_ENT, KC_SPC , MO(6)   ,     KC_NO  , KC_SPC ,KC_SPC, KC_RGUI, KC_DEL,
+                KC_MUTE, KC_NO,  KC_NO, KC_NO, KC_NO,                                                                KC_MUTE, KC_NO, KC_NO, KC_NO, KC_NO
+       ),
+
+    [6] = LAYOUT_elora_hlc(
+           KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,                                   KC_F7,    KC_F8,    KC_F9,    KC_F10,    KC_F11,   KC_F12,
+
+                  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,                                KC_LCBR,   KC_RCBR,   KC_MINS,   KC_EQL,   KC_HOME, KC_PGUP,
+
+                  KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                          KC_LEFT, KC_UP, KC_DOWN,  KC_RIGHT,  KC_END, KC_PGDN,
+
+                  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,   KC_NO,  KC_ESC, DF(0),                 KC_NO, KC_NO, KC_LBRC,   KC_RBRC,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+
+                                          KC_TRNS, KC_TRNS,  KC_TRNS,  KC_NO, KC_TRNS,                KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+
+                  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
+       ),
 // /*
 //  * Layer template
 //  *
