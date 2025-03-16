@@ -11,6 +11,11 @@ static uint16_t last_layer_change = 0;
 static uint8_t brightness = 255;
 static bool fading = false;
 
+// Track current HSV color for fading
+static uint16_t last_h = 0;
+static uint8_t last_s = 0;
+static uint8_t last_v = 255;
+
 /**
  * Called automatically when layer changes.
  */
@@ -19,28 +24,39 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
     switch (layer) {
         case 0:
-            rgb_matrix_sethsv_noeeprom(HSV_RED);
+            last_h = HSV_RED & 0xFFFF;
+            last_s = (HSV_RED >> 16) & 0xFF;
+            last_v = (HSV_RED >> 24) & 0xFF;
             break;
         case 1:
-            rgb_matrix_sethsv_noeeprom(HSV_ORANGE);
+            last_h = HSV_ORANGE & 0xFFFF;
+            last_s = (HSV_ORANGE >> 16) & 0xFF;
+            last_v = (HSV_ORANGE >> 24) & 0xFF;
             break;
         case 5:
-            rgb_matrix_sethsv_noeeprom(HSV_GREEN);
+            last_h = HSV_GREEN & 0xFFFF;
+            last_s = (HSV_GREEN >> 16) & 0xFF;
+            last_v = (HSV_GREEN >> 24) & 0xFF;
             break;
         case 6:
-            rgb_matrix_sethsv_noeeprom(HSV_BLUE);
+            last_h = HSV_BLUE & 0xFFFF;
+            last_s = (HSV_BLUE >> 16) & 0xFF;
+            last_v = (HSV_BLUE >> 24) & 0xFF;
             break;
         default:
-            rgb_matrix_sethsv_noeeprom(HSV_WHITE);
+            last_h = HSV_WHITE & 0xFFFF;
+            last_s = (HSV_WHITE >> 16) & 0xFF;
+            last_v = (HSV_WHITE >> 24) & 0xFF;
             break;
     }
 
     rgb_matrix_set_speed_noeeprom(0);
     rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+    rgb_matrix_sethsv_noeeprom(last_h, last_s, last_v);
 
-    last_layer_change = timer_read(); // Track when the layer was changed
-    brightness = 255;                 // Reset brightness to max
-    fading = false;                   // Stop any ongoing fade until timeout
+    last_layer_change = timer_read();
+    brightness = 255;
+    fading = false;
 
     return state;
 }
@@ -56,11 +72,7 @@ void matrix_scan_user(void) {
     if (fading && brightness > 0) {
         brightness = (brightness > FADE_SPEED) ? (brightness - FADE_SPEED) : 0;
 
-        // Scale color down by brightness
-        rgb_matrix_set_color_all(
-            (brightness),     // Red
-            (brightness),     // Green
-            (brightness)      // Blue
-        );
+        uint8_t v = (last_v * brightness) / 255;
+        rgb_matrix_sethsv_noeeprom(last_h, last_s, v);
     }
 }
