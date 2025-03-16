@@ -3,7 +3,7 @@
 #include "timer.h"
 
 // Configurable options
-#define FADE_TIMEOUT 3000 // milliseconds after layer switch before fade
+#define FADE_TIMEOUT 2000 // milliseconds after layer switch before fade
 #define FADE_SPEED   1    // how fast it fades per matrix scan (brightness step)
 
 // Internal state
