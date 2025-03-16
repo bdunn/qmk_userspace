@@ -35,6 +35,13 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             break;
     }
 
+    rgb_matrix_set_speed_noeeprom(0);
+    rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+
+    last_layer_change = timer_read(); // Track when the layer was changed
+    brightness = 255;                 // Reset brightness to max
+    fading = false;                   // Stop any ongoing fade until timeout
+
     return state;
 }
 
