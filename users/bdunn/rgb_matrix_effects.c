@@ -24,29 +24,29 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
     switch (layer) {
         case 0:
-            last_h = HSV_RED & 0xFFFF;
-            last_s = (HSV_RED >> 16) & 0xFF;
-            last_v = (HSV_RED >> 24) & 0xFF;
+            last_h = 0;      // RED
+            last_s = 255;
+            last_v = 255;
             break;
         case 1:
-            last_h = HSV_ORANGE & 0xFFFF;
-            last_s = (HSV_ORANGE >> 16) & 0xFF;
-            last_v = (HSV_ORANGE >> 24) & 0xFF;
+            last_h = 21;     // ORANGE
+            last_s = 255;
+            last_v = 255;
             break;
         case 5:
-            last_h = HSV_GREEN & 0xFFFF;
-            last_s = (HSV_GREEN >> 16) & 0xFF;
-            last_v = (HSV_GREEN >> 24) & 0xFF;
+            last_h = 85;     // GREEN
+            last_s = 255;
+            last_v = 255;
             break;
         case 6:
-            last_h = HSV_BLUE & 0xFFFF;
-            last_s = (HSV_BLUE >> 16) & 0xFF;
-            last_v = (HSV_BLUE >> 24) & 0xFF;
+            last_h = 170;    // BLUE
+            last_s = 255;
+            last_v = 255;
             break;
         default:
-            last_h = HSV_WHITE & 0xFFFF;
-            last_s = (HSV_WHITE >> 16) & 0xFF;
-            last_v = (HSV_WHITE >> 24) & 0xFF;
+            last_h = 0;      // WHITE (no hue, no saturation, max value)
+            last_s = 0;
+            last_v = 255;
             break;
     }
 
