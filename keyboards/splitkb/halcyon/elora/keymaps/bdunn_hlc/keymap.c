@@ -1,6 +1,7 @@
 #include QMK_KEYBOARD_H
 
 void keyboard_post_init_user(void) {
+    eeconfig_update_rgb_matrix_default();     // Optional: clear RGB Matrix EEPROM
     rgb_matrix_enable();
     rgb_matrix_mode_noeeprom(RGB_MATRIX_BREATHING);
     rgb_matrix_sethsv_noeeprom(HSV_RED);
