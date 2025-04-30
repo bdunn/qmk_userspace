@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
        KC_NO,  KC_F,  KC_P,    KC_D,    KC_L,   KC_X,  KC_ESC, KC_Q,                       KC_Z, KC_DEL, KC_MINS,   KC_U,   KC_O,   KC_Y,   KC_B,   KC_Z,
 
-                               KC_LALT, MO(1),  KC_ENT,  KC_R, KC_SPC,                     KC_ENT,  KC_BSPC, KC_SPC, MO(1), KC_DEL,
+                               KC_LALT, KC_LGUI,  KC_NO,  KC_R, MO(1),                     KC_ENT,  KC_BSPC, KC_SPC, KC_NO, KC_DEL,
 
        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                           KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
    ),
@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
               KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                          KC_LEFT, KC_DOWN, KC_UP,  KC_RIGHT,  KC_END, KC_PGDN,
 
-              KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,   KC_NO,  KC_ESC, TO(5),                 KC_NO, KC_NO, KC_LBRC,   KC_RBRC,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+              TO(5),  KC_NO,  KC_NO,    KC_NO,    KC_NO,   KC_NO,  KC_ESC, KC_TRNS,                 KC_NO, KC_NO, KC_LBRC,   KC_RBRC,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
 
                                       KC_TRNS, KC_TRNS,  KC_TRNS,  KC_NO, KC_TRNS,                KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
 
@@ -102,18 +102,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 KC_TAB  , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P , KC_BSLS,
                 KC_LCTL , KC_A ,  KC_S   ,  KC_D  ,   KC_F ,   KC_G ,                                        KC_H,   KC_J ,  KC_K ,   KC_L ,KC_SCLN, KC_QUOT,
                 KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , KC_ESC, KC_NO,        KC_NO  , KC_NO,  KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
-                                            KC_LALT , MO(6) , KC_ENT, KC_SPC , KC_LGUI   ,     KC_ENT  , KC_SPC ,KC_SPC, KC_RGUI, KC_DEL,
+                                            KC_LALT , KC_LGUI , KC_NO, KC_SPC , MO(6),     KC_ENT  , KC_SPC ,KC_SPC, KC_RGUI, KC_DEL,
                 KC_MUTE, KC_NO,  KC_NO, KC_NO, KC_NO,                                                                KC_MUTE, KC_NO, KC_NO, KC_NO, KC_NO
        ),
 
     [6] = LAYOUT_elora_hlc(
            KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,                                   KC_F7,    KC_F8,    KC_F9,    KC_F10,    KC_F11,   KC_F12,
 
-                  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,                                KC_LCBR,   KC_RCBR,   KC_MINS,   KC_EQL,   KC_HOME, KC_PGUP,
+                  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,                                KC_LCBR,   KC_RCBR,   KC_MINUS,   KC_EQL,   KC_HOME, KC_PGUP,
 
-                  KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                          KC_LEFT, KC_DOWN, KC_UP,  KC_RIGHT,  KC_END, KC_PGDN,
+                  KC_LCTL,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                          KC_LEFT, KC_DOWN, KC_UP,  KC_RIGHT,  KC_END, KC_PGDN,
 
-                  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,   KC_NO,  KC_ESC, TO(0),                 KC_NO, KC_NO, KC_LBRC,   KC_RBRC,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+                  KC_LSFT,  KC_NO,  KC_NO,    KC_NO,    KC_NO,   KC_NO,  KC_ESC, TO(0),                 KC_NO, KC_NO, KC_LBRC,   KC_RBRC,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
 
                                           KC_TRNS, KC_TRNS,  KC_TRNS,  KC_NO, KC_TRNS,                KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
 
