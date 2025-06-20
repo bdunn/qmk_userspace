@@ -49,9 +49,9 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             last_v = 255;
             break;
         case 10:
-            last_h = 170;    // BLUE
-            last_s = 255;
-            last_v = 255;
+            last_h = 255;    // Orange
+            last_s = 191;
+            last_v = 0;
             break;
         default:
             last_h = 0;      // WHITE (no hue, no saturation, max value)
