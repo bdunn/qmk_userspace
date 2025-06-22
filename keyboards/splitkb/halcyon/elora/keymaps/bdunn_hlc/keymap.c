@@ -173,13 +173,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 register_code(KC_LCTL);
                 register_code(KC_LGUI);
                 register_code(KC_SPC);
-                rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
-                rgblight_sethsv(0, 255, 255);
+                rgblight_enable();  // just enable it
+                rgblight_sethsv(0, 255, 255);  // solid red
             } else {
                 unregister_code(KC_SPC);
                 unregister_code(KC_LGUI);
                 unregister_code(KC_LCTL);
-                rgblight_disable();
+                rgblight_disable(); // turns lighting off
             }
             return false;
     }
