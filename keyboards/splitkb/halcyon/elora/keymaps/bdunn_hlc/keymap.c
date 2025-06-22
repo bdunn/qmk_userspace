@@ -1,4 +1,10 @@
 #include QMK_KEYBOARD_H
+#include QMK_KEYBOARD_H
+
+// Custom keycodes
+enum custom_keycodes {
+    VOICE_HOLD = SAFE_RANGE,
+};
 
 void keyboard_post_init_user(void) {
     rgb_matrix_enable();
@@ -112,7 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                     KC_1 ,  KC_2   ,  KC_3  ,   KC_4 ,   KC_5 ,    KC_6 ,                                        KC_7,   KC_8 ,   KC_9 ,  KC_0 , KC_GRV, KC_BSPC,
                     KC_TAB  , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P , KC_BSLS,
                     KC_LCTL , KC_A ,  KC_S   ,  KC_D  ,   KC_F ,   KC_G ,                                        KC_H,   KC_J ,  KC_K ,   KC_L ,KC_SCLN, KC_QUOT,
-                    KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , KC_ESC, LCTL(LGUI(KC_SPC)),        KC_NO  , KC_NO,  KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
+                    KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , KC_ESC, VOICE_HOLD,        KC_NO  , KC_NO,  KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
                                                 KC_LALT , KC_LGUI , MO(10), KC_SPC , LSFT(KC_SPC),     KC_ENT  , KC_SPC ,KC_SPC, KC_RGUI, KC_DEL,
                     KC_MUTE, KC_NO,  KC_NO, KC_NO, KC_NO,                                                                KC_MUTE, KC_NO, KC_NO, KC_NO, KC_NO
            ),
@@ -158,3 +164,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     ),
 //
 };
+
+// Process custom keycodes for press-and-hold behavior
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case VOICE_HOLD:
+            if (record->event.pressed) {
+                register_code(KC_LCTL);
+                register_code(KC_LGUI);
+                register_code(KC_SPC);
+            } else {
+                unregister_code(KC_SPC);
+                unregister_code(KC_LGUI);
+                unregister_code(KC_LCTL);
+            }
+            return false;
+    }
+    return true;
+}
