@@ -173,7 +173,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 register_code(KC_LCTL);
                 register_code(KC_LGUI);
                 register_code(KC_SPC);
-                rgblight_mode(RGBLIGHT_MODE_BREATHING + 2); // This is a common red breathing mode
+                rgblight_mode(RGBLIGHT_MODE_BREATHING_RGB);
                 rgblight_sethsv(0, 255, 255);
             } else {
                 unregister_code(KC_SPC);
