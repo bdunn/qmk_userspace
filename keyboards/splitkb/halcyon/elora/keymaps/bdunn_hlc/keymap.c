@@ -35,9 +35,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    [0] = LAYOUT_elora_hlc(
        KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,                                   KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV,   KC_BSPC,
        KC_TAB,   KC_V,   KC_W,   KC_G,   KC_M,    KC_J,                                     KC_SCLN,   KC_DOT,   KC_QUOT,   KC_EQL,   KC_SLSH, KC_BSLS,
-       KC_NO,  LGUI_T(KC_S), LALT_T(KC_N), LCTL_T(KC_T), LSFT_T(KC_H), KC_K,                KC_COMMA, RSFT_T(KC_A), RCTL_T(KC_E), RALT_T(KC_I), RGUI_T(KC_C), KC_Q,
-       KC_NO,  KC_F,  KC_P,    KC_D,    KC_L,   KC_X,  KC_ESC, KC_Q,                       KC_Z, KC_DEL, KC_MINS,   KC_U,   KC_O,   KC_Y,   KC_B,   KC_Z,
-                               KC_LALT, KC_LGUI,  KC_NO,  KC_R, MO(1),                     KC_ENT,  KC_BSPC, KC_SPC, KC_LGUI, KC_DEL,
+       KC_LCTL,  LGUI_T(KC_S), LALT_T(KC_N), LCTL_T(KC_T), LSFT_T(KC_H), KC_K,                KC_COMMA, RSFT_T(KC_A), RCTL_T(KC_E), RALT_T(KC_I), RGUI_T(KC_C), KC_Q,
+       KC_LSFT,  KC_F,  KC_P,    KC_D,    KC_L,   KC_X,  KC_ESC, KC_Q,                       KC_Z, KC_DEL, KC_MINS,   KC_U,   KC_O,   KC_Y,   KC_B,   KC_Z,
+                               KC_LALT, KC_LGUI,  KC_BSPC,  KC_R, MO(1),                     KC_ENT,  KC_NO, KC_SPC, KC_LGUI, KC_DEL,
        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                           KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
    ),
 
